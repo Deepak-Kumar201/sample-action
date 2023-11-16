@@ -1,19 +1,22 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
+name: 'pr-comment'
+description: 'PR comment actions'
 author: 'Your name or organization here'
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  owner: 
+    description: 'Onwer of repo/org'
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
+  repo:
+    description: "Repo name"
+    required: true
+  pr_number:
+    description: "PR number"
+    required: true
+  token:
+    description: "Github token"
+    required: true
 
 runs:
-  using: node20
+  using: node18
   main: dist/index.js
